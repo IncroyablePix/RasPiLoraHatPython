@@ -14,3 +14,9 @@ add_custom_target(
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     COMMENT "Building and installing ${PROJECT_NAME}"
 )
+
+#add_library(${PROJECT_NAME} MODULE
+#    LoRa.c)
+
+#target_include_directories(${PROJECT_NAME} PRIVATE ${PYTHON_INCLUDE_DIRS})
+#target_include_directories(${PROJECT_NAME} PRIVATE ../LoRaDraginoDriver)

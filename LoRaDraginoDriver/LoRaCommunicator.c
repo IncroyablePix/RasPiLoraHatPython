@@ -1,5 +1,6 @@
 #include <malloc.h>
 #include <string.h>
+#include <pthread.h>
 #include <wiringPi.h>
 #include "LoRaCommunicator.h"
 #include "Wiring.h"
@@ -29,7 +30,6 @@ LoRaCommunicator* InitLoRaCommunicator(uint32_t frequency, Sf spreadingFactor, L
         SetReading(loraCom->LoRaWiring);
     else if(role == LORA_ROLE_SENDER)
         SetWriting(loraCom->LoRaWiring);
-
 
     return loraCom;
 }
@@ -84,12 +84,25 @@ void LoRaSend(LoRaCommunicator* loraCom, char* message)
     }
 }
 
-void Stop(LoRaCommunicator* loraCom)
+void StopLoRaListen(LoRaCommunicator* loraCom)
 {
     if(loraCom != NULL)
     {
         loraCom->Listening = 0;
     }
+}
+
+void* LoRaListenThreadImpl(void* loraCom)
+{
+    LoRaListen((LoRaCommunicator *)loraCom);
+    return NULL;
+}
+
+pthread_t LoRaListenThread(LoRaCommunicator* loraCom)
+{
+    pthread_t tid;
+    pthread_create(&tid, NULL, LoRaListenThreadImpl, loraCom);
+    return tid;
 }
 
 void LoRaListen(LoRaCommunicator* loraCom)

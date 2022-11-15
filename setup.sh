@@ -6,3 +6,5 @@ export CPPFLAGS=-I/usr/local/opt/LoRaDraginoDriver/include
 mkdir build
 cmake build .
 make install
+
+cp /usr/local/opt/LoRaDraginoDriver/lib/libLoRaDraginoDriver.so /usr/lib/libLoRaDraginoDriver.so

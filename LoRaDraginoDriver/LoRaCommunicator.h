@@ -19,7 +19,8 @@ void SetStaticOnReceive(LoRaCommunicator* loraCom, void(*OnReceive)(char* messag
 void SetOnReceive(LoRaCommunicator* loraCom, void(*OnReceive)(char* message, int length, void* extra), void* extra);
 LoRaState GetLoRaState(LoRaCommunicator* loraCom);
 void LoRaSend(LoRaCommunicator* loraCom, char* message);
-void Stop(LoRaCommunicator* loraCom);
+void StopLoRaListen(LoRaCommunicator* loraCom);
+pthread_t LoRaListenThread(LoRaCommunicator* loraCom);
 void LoRaListen(LoRaCommunicator* loraCom);
 
 #endif //NOALORAWRAPPER_LORACOMMUNICATOR_H

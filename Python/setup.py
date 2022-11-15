@@ -13,7 +13,7 @@ def main():
             Extension(
                 "lorapy",
                 ["LoRa.c"],
-                extra_link_args=["-ldl", "-lwiringPi", "-lLoRaDraginoDriver"],
+                extra_link_args=["-ldl", "-lwiringPi", "-lpthread", "-lLoRaDraginoDriver"],
             )
         ]
     )
