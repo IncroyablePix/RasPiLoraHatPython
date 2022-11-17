@@ -197,7 +197,7 @@ void SetupLoRaWiring(Wiring* wiring)
 
     Opmode(wiring, OPMODE_SLEEP);
 
-    // set frequency
+    // Set frequency
     uint64_t frf = ((uint64_t)wiring->Frequency << 19) / 32000000;
     WriteRegistry(wiring, REG_FRF_MSB, (uint8_t) (frf >> 16));
     WriteRegistry(wiring, REG_FRF_MID, (uint8_t) (frf >> 8));

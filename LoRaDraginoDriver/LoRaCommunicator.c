@@ -129,3 +129,23 @@ void LoRaListen(LoRaCommunicator* loraCom)
         }
     }
 }
+
+char* LoRaListenOnce(LoRaCommunicator* loraCom)
+{
+    if(loraCom != NULL)
+    {
+        loraCom->Listening = 1;
+        char* message = NULL;
+
+        while(message == NULL)
+        {
+            message = ReadRx(loraCom->LoRaWiring);
+            delay(1);
+        }
+
+        loraCom->Listening = 0;
+        return message;
+    }
+
+    return NULL;
+}

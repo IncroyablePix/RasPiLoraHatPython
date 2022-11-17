@@ -35,7 +35,9 @@ The constructor takes 2 arguments:
     * **payload**: The payload of the received message as a Python string.
 
 * **listen**: This method is used to start listening. It takes 1 argument:
-  * **multithread**: Whether or not the function fires a new thread to listen. If no value is provided, it defaults to True. 
+  * **multithread**: Whether or not the function fires a new thread to listen. If no value is provided, it defaults to True.
+
+* **listen_once**: This method is used to listen once, returning the received message as plain text. It takes no argument.
 
 * **send**: This method is used to send a message. It takes 1 argument:
   * **payload**: The payload to send as a Python string.
@@ -45,6 +47,15 @@ The constructor takes 2 arguments:
 ⛔ The send function is currently not stable and might not work as expected! ⛔
 
 #### Single or multithreaded
+The simplest ways is to just use the **listen_once** method which returns the message as plain text.
+```python
+from lorapy import LoRaCom
+
+com = LoRaCom(868_000_000, 7)
+msg = com.listen_once()
+```
+
+
 You can run the **listen** method in a separate thread (**default**) or in blocking mode.
 In multithreaded mode, the listen method will not return until the LoRaCom instance is "stopped" with the **stop** method.
 
