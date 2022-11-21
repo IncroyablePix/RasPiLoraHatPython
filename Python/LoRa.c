@@ -164,7 +164,7 @@ static PyMethodDef LoRaCom_methods[] =
     {
         { "send", (PyCFunction)LoRaCom_send, METH_VARARGS, "Send a message" },
         { "set_on_receive", (PyCFunction)LoRaCom_set_on_receive, METH_VARARGS, "Set the callback for when a message is received" },
-        { "listen", (PyCFunction)LoRaCom_listen, METH_VARARGS, "Listen for messages" },
+        // { "listen", (PyCFunction)LoRaCom_listen, METH_VARARGS, "Listen for messages" },
         { "listen_once", (PyCFunction)LoRaCom_listen_once, METH_NOARGS, "Listen for a single message" },
         { "stop", (PyCFunction)LoRaCom_stop, METH_NOARGS, "Stop listening for messages" },
         { "__str__", (PyCFunction)LoRaCom_str, METH_NOARGS, "String representation" },
