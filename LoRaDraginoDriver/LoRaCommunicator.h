@@ -22,5 +22,6 @@ void LoRaSend(LoRaCommunicator* loraCom, char* message);
 void StopLoRaListen(LoRaCommunicator* loraCom);
 pthread_t LoRaListenThread(LoRaCommunicator* loraCom);
 void LoRaListen(LoRaCommunicator* loraCom);
+int HasLoRaTransceiver(const LoRaCommunicator* loraCom);
 
 #endif //NOALORAWRAPPER_LORACOMMUNICATOR_H

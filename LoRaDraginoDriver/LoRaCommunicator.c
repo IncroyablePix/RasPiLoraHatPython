@@ -149,3 +149,11 @@ char* LoRaListenOnce(LoRaCommunicator* loraCom)
 
     return NULL;
 }
+
+int HasLoRaTransceiver(const LoRaCommunicator* loraCom)
+{
+    if(loraCom != NULL)
+        return HasTransceiver(loraCom->LoRaWiring);
+
+    return 0;
+}

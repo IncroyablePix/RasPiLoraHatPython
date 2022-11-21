@@ -40,6 +40,13 @@ static int LoRaCom_init(LoRaCom *self, PyObject *args, PyObject *kwds)
     self->LoRaCommunicator = InitLoRaCommunicator(frequency, spreadingFactor, LORA_ROLE_RECEIVER);
     self->Frequency = frequency;
     self->SpreadingFactor = spreadingFactor;
+
+    if(!HasLoRaTransceiver(self->LoRaCommunicator))
+    {
+        PyErr_SetString(PyExc_RuntimeError, "No LoRa transceiver found");
+        return -1;
+    }
+
     return 0;
 }
 

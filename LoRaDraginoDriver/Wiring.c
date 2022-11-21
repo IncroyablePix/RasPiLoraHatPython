@@ -465,3 +465,11 @@ LoRaState GetWiringState(const Wiring* wiring)
 
     return wiring->State;
 }
+
+int HasTransceiver(const Wiring* wiring)
+{
+    if(wiring == NULL)
+        return 0;
+
+    return wiring->RfTransceiver != SXNONE;
+}

@@ -42,5 +42,6 @@ void SetWriting(Wiring* wiring);
 void ConfigPower(Wiring* wiring, int8_t pw);
 void SetPaRampUpTime(Wiring* wiring);
 LoRaState GetWiringState(const Wiring* wiring);
+int HasTransceiver(const Wiring* wiring);
 
 #endif //NOALORAWRAPPER_WIRING_H
