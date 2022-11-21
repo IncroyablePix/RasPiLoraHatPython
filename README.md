@@ -14,7 +14,7 @@ The installation is pretty easy and has a few requirements.
 ### Installation
 1. Clone this repository
 2. Move to the cloned directory
-3. Run `sudo chmod +x ./install.sh && sudo ./install.sh`
+3. Run `udo chmod +x ./setup.sh && sudo ./setup.sh`
 
 This will give you access to the **lora** module in Python. Since the driver is written in C, you may also write your application in C/C++ as depicted in the Sample directory.
 
