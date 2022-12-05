@@ -4,7 +4,7 @@ export LDFLAGS=-L/usr/local/opt/LoRaDraginoDriver/lib
 export CPPFLAGS=-I/usr/local/opt/LoRaDraginoDriver/include
 
 mkdir -p /usr/local/opt/LoRaDraginoDriver/lib
-mkdir -p /usr/local/opt/LoRaDraginoDriver/include
+mkdir -p /usr/local/opt/LoRaDraginoDriver/include/LoRaDraginoDriver
 
 mkdir build
 cmake build .
